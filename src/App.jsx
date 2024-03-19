@@ -4,10 +4,12 @@ import LandingPage from "./LandingPage";
 import Expertise from "./Expertise";
 import Experience from "./Experience";
 import Education from "./Education";
+import CustomCursor from "./CustomCursor";
 
 function App() {
   return (
     <>
+      <CustomCursor></CustomCursor>
       <div>
         <Header></Header>
       </div>
@@ -24,11 +26,12 @@ function App() {
       </div>
       <div>
         <Education />
-      </div>
+        </div>
 
       <div>
-        <Footer></Footer>
+    <Footer></Footer>   
       </div>
+    
     </>
   );
 }

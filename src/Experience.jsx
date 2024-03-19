@@ -1,7 +1,11 @@
 import React from "react";
-import DevLogo from "./assets/dev_information_technology_logo.jpg";
-import FirstLogo from "./assets/first_walkin_technologies_logo.jpg";
+import DevLogo from "./assets/DevLogo.jpg";
+import FirstLogo from "./assets/FirstWalkinLogo.jpg";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-scroll";
+import Lottie from "lottie-react";
+import DownAnimationData from "./assets/DownAnimation.json";
+import ExperienceAnimationData from "./assets/ExperienceAnimation.json";
 export default function Experiece() {
   return (
     <>
@@ -10,17 +14,27 @@ export default function Experiece() {
         className="bg-gray-800 py-24 sm:py-32  w-screen"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <Fade bottom duration={1200}>
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
-              Experience
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-100">
-              Crafting success through years of professional mastery, each
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16 mx-auto max-w-7xl px-6 lg:px-8">
+            <div>
+              <Fade bottom duration={1200}>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                Experience
+                </h2>
+                <p className="mt-2 text-lg leading-8 text-gray-100">
+                Crafting success through years of professional mastery, each
               experience a brushstroke in the masterpiece of my portfolio.
-            </p>
+                </p>
+              </Fade>
+            </div>
+            <div className="flex justify-center items-center">
+              <Fade bottom duration={1200}>
+              <div style={{ width: "300px", height: "250px" }} className="center">
+              <Lottie animationData={ExperienceAnimationData}></Lottie>
+            </div>
+              </Fade>
+            </div>
           </div>
-          </Fade>
+          
           <Fade bottom duration={1500}>
           <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div className="p-8 sm:p-10 lg:flex-auto">
@@ -38,7 +52,7 @@ export default function Experiece() {
 
               </p>
               <div className="mt-10 flex items-center gap-x-4">
-                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-600">
+                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-400">
                  Technology Stack
                 </h4>
                 <div className="h-px flex-auto bg-gray-100"></div>
@@ -97,7 +111,7 @@ export default function Experiece() {
 
               </p>
               <div className="mt-10 flex items-center gap-x-4">
-                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-600">
+                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-400">
                  Technology Stack
                 </h4>
                 <div className="h-px flex-auto bg-gray-100"></div>
@@ -148,7 +162,7 @@ export default function Experiece() {
 •	Managed the performance and API testing of the CCD (Cafe Coffee Day) application.
               </p>
               <div className="mt-10 flex items-center gap-x-4">
-                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-600">
+                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-400">
                  Technology Stack
                 </h4>
                 <div className="h-px flex-auto bg-gray-100"></div>
@@ -183,6 +197,11 @@ export default function Experiece() {
             </div>
           </div>
           </Fade>
+          <Link to="education" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50" smooth={true} duration={800}>
+          <div className="absolute  left-1/2 transform -translate-x-1/2 mb-8 pt-10">
+            <Lottie animationData={DownAnimationData}></Lottie>
+          </div>
+          </Link>
         </div>
       </div>
     </>
