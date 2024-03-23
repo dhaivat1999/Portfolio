@@ -9,16 +9,16 @@ export default function Expertise() {
     <>
       <div
         id="expertise"
-        className="bg-gray-800 py-24 sm:py-32 h-screen w-screen "
+        className="bg-customGradient-900 py-24 sm:py-32 h-screen w-screen "
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16 mx-auto max-w-7xl px-6 lg:px-8">
             <div>
               <Fade bottom duration={1200}>
-                <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-customGradient-200 sm:text-4xl">
                   Expertise
                 </h2>
-                <p className="mt-2 text-lg leading-8 text-gray-100">
+                <p className="mt-2 text-lg leading-8 text-customGradient-200">
                   Sometimes the best way to solve a problem is to help other -
                   Uncle Iroh, 'Avatar: The Last Airbender'
                 </p>
@@ -59,11 +59,11 @@ export default function Expertise() {
                       />
                     </svg>
                   </span>
-                  <h3 className="mt-3 text-2xl font-semibold leading-6 text-gray-100 group-hover:text-gray-500">
+                  <h3 className="mt-3 text-2xl font-semibold leading-6 text-customGradient-200 group-hover:text-gray-500">
                     <a href="#">Software Development</a>
                   </h3>
                 </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-100">
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
                   In the realm of software development, I seamlessly transition
                   between the worlds of functional and object-oriented
                   programming, proficient in Java, Go, Python, JavaScript, and
@@ -88,11 +88,11 @@ export default function Expertise() {
                       <path d="M12.215 13.773a1.792 1.792 0 1 0-1.786-1.8v.006a1.787 1.787 0 0 0 1.786 1.794Z" />
                     </svg>
                   </span>
-                  <h3 className="mt-3 text-2xl font-semibold leading-6 text-gray-100 group-hover:text-gray-500">
+                  <h3 className="mt-3 text-2xl font-semibold leading-6 text-customGradient-200 group-hover:text-gray-500">
                     <a href="#"> FrontEnd - React, Angular</a>
                   </h3>
                 </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-100">
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
                   Mastering the art of front-end alchemy: React, Angular, HTML,
                   CSS (Tailwind CSS), TypeScript, and JavaScript are my tools of
                   choice.
@@ -115,11 +115,11 @@ export default function Expertise() {
                       <path d="M12 7.205c4.418 0 8-1.165 8-2.602C20 3.165 16.418 2 12 2S4 3.165 4 4.603c0 1.437 3.582 2.602 8 2.602ZM12 22c4.963 0 8-1.686 8-2.603v-4.404c-.052.032-.112.06-.165.09a7.75 7.75 0 0 1-.745.387c-.193.088-.394.173-.6.253-.063.024-.124.05-.189.073a18.934 18.934 0 0 1-6.3.998c-2.135.027-4.26-.31-6.3-.998-.065-.024-.126-.05-.189-.073a10.143 10.143 0 0 1-.852-.373 7.75 7.75 0 0 1-.493-.267c-.053-.03-.113-.058-.165-.09v4.404C4 20.315 7.037 22 12 22Zm7.09-13.928a9.91 9.91 0 0 1-.6.253c-.063.025-.124.05-.189.074a18.935 18.935 0 0 1-6.3.998c-2.135.027-4.26-.31-6.3-.998-.065-.024-.126-.05-.189-.074a10.163 10.163 0 0 1-.852-.372 7.816 7.816 0 0 1-.493-.268c-.055-.03-.115-.058-.167-.09V12c0 .917 3.037 2.603 8 2.603s8-1.686 8-2.603V7.596c-.052.031-.112.059-.165.09a7.816 7.816 0 0 1-.745.386Z" />
                     </svg>
                   </span>
-                  <h3 className="mt-3 text-2xl font-semibold leading-6 text-gray-100 group-hover:text-gray-500">
+                  <h3 className="mt-3 text-2xl font-semibold leading-6 text-customGradient-200 group-hover:text-gray-500">
                     <a href="#"> Database and API Development</a>
                   </h3>
                 </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-100">
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
                   At the intersection of databases and APIs, I orchestrate
                   seamless experiences with Node.js, Express, and MongoDB,
                   ensuring data flows smoothly and securely.
@@ -130,7 +130,7 @@ export default function Expertise() {
           <Fade bottom duration={1500}>
           <Link
             to="experience"
-            className="font-semibold leading-6 text-gray-100 hover:text-opacity-50"
+            className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50"
             smooth={true}
             duration={800}
           >

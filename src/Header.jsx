@@ -29,21 +29,24 @@ export default function Header() {
         <div className="flex lg:hidden"></div>
         <div className="lg:flex lg:gap-x-12">
           <a>
-          <Link to="home" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50" smooth={true} duration={800}>Home</Link> 
+          <Link to="home" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Home</Link> 
           </a>
           <a>
-          <Link to="expertise" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50" smooth={true} duration={800}>Expertise</Link> 
-          </a>
-          <a>
-          <Link to="experience" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50" smooth={true} duration={800}>Experience</Link> 
+          <Link to="expertise" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Expertise</Link> 
           </a>
           <a > 
-          <Link to="education" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50" smooth={true} duration={800}>Education</Link> 
+          <Link to="projects" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Projects</Link> 
           </a>
-          <a href="https://www.linkedin.com/in/dhaivatdesai1999/" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50">
-            LinkedIn
+          <a>
+          <Link to="experience" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Experience</Link> 
           </a>
-          <a href={Pdf} target="_blank" rel="noopener noreferrer" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50">
+          <a > 
+          <Link to="education" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Education</Link> 
+          </a>
+          <a > 
+          <Link to="social" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={1500}>Social</Link> 
+          </a>
+          <a href={Pdf} target="_blank" rel="noopener noreferrer" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50">
             Resume
           </a>
         </div>

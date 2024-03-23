@@ -11,16 +11,16 @@ export default function Experiece() {
     <>
       <div
         id="experience"
-        className="bg-gray-800 py-24 sm:py-32  w-screen"
+        className="bg-customGradient-900 py-24 sm:py-32  w-screen"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16 mx-auto max-w-7xl px-6 lg:px-8">
             <div>
               <Fade bottom duration={1200}>
-                <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight text-customGradient-200 sm:text-4xl">
                 Experience
                 </h2>
-                <p className="mt-2 text-lg leading-8 text-gray-100">
+                <p className="mt-2 text-lg leading-8 text-customGradient-200">
                 Crafting success through years of professional mastery, each
               experience a brushstroke in the masterpiece of my portfolio.
                 </p>
@@ -36,15 +36,15 @@ export default function Experiece() {
           </div>
           
           <Fade bottom duration={1500}>
-          <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+          <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-customGradient-50 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div className="p-8 sm:p-10 lg:flex-auto">
-              <h3 className="text-2xl font-bold tracking-tight text-gray-100">
+              <h3 className="text-2xl font-bold tracking-tight text-customGradient-200">
                 Bank of America - Software Engineer IB
               </h3>
-              <h4 className="text-gray-100 italic">
+              <h4 className="text-customGradient-200 italic">
               July 2020 - June 2022 | GIFT City, Gujarat, India
               </h4>
-              <p className="mt-6 text-base leading-7 text-gray-100">
+              <p className="mt-6 text-base leading-7 text-customGradient-200">
               •	Received one gold and two bronze recognition awards.
 •	Developed a Java tool for global web.config file changes, enhancing integration efficiency by 80%.
 •	Led the DevOps team, establishing CI/CD using Jenkins for over 400 repositories.
@@ -52,32 +52,32 @@ export default function Experiece() {
 
               </p>
               <div className="mt-10 flex items-center gap-x-4">
-                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-400">
+                <h4 className="flex-none text-xl font-semibold leading-6 text-customGradient-400">
                  Technology Stack
                 </h4>
                 <div className="h-px flex-auto bg-gray-100"></div>
               </div>
               <ul
                 role="list"
-                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-gray-100 sm:grid-cols-3 sm:gap-6"
+                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
               >
                 <li className="flex gap-x-3">
-                  <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Angular</a>
+                  <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Angular</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Java</a>
+                <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Java</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Dev Ops</a>
+                <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Dev Ops</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Anisble Tower</a>
+                <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Anisble Tower</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">TypeScript</a>
+                <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">TypeScript</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">BitBucket</a>
+                <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">BitBucket</a>
                 </li>
               </ul>
             </div>
@@ -95,15 +95,15 @@ export default function Experiece() {
           </div>
           </Fade>
           <Fade bottom duration={1700}>
-          <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+          <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-customGradient-50 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div className="p-8 sm:p-10 lg:flex-auto">
-              <h3 className="text-2xl font-bold tracking-tight text-gray-100">
+              <h3 className="text-2xl font-bold tracking-tight text-customGradient-200">
               Dev Information Technology Pvt Ltd - Intern
               </h3>
-              <h4 className="text-gray-100 italic">
+              <h4 className="text-customGradient-200 italic">
               Jan 2020 — May 2020 - Ahmedabad, Gujarat, India
               </h4>
-              <p className="mt-6 text-base leading-7 text-gray-100">
+              <p className="mt-6 text-base leading-7 text-customGradient-200">
               •	Prepared the front-end of projects using Angular 8, focusing on HTML, CSS, and Typescript.
 •	Implemented a three-tier architecture for seamless integration between the front-end and APIs.
 
@@ -111,32 +111,32 @@ export default function Experiece() {
 
               </p>
               <div className="mt-10 flex items-center gap-x-4">
-                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-400">
+                <h4 className="flex-none text-xl font-semibold leading-6 text-customGradient-400">
                  Technology Stack
                 </h4>
                 <div className="h-px flex-auto bg-gray-100"></div>
               </div>
               <ul
                 role="list"
-                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-gray-100 sm:grid-cols-3 sm:gap-6"
+                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
               >
                 <li className="flex gap-x-3">
-                  <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Angular</a>
+                  <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Angular</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Node.js(Express)</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Node.js(Express)</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Javascript</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Javascript</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">HTML / CSS</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">HTML / CSS</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">TypeScript</a>
+                <a  class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">TypeScript</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Github</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Github</a>
                 </li>
               </ul>
             </div>
@@ -150,41 +150,41 @@ export default function Experiece() {
           </div>
           </Fade>
           <Fade bottom duration={1900}>
-          <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+          <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-customGradient-50 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
             <div className="p-8 sm:p-10 lg:flex-auto">
-              <h3 className="text-2xl font-bold tracking-tight text-gray-100">
+              <h3 className="text-2xl font-bold tracking-tight text-customGradient-200">
               First Walkin Technologies Pvt Ltd - Summer Intern </h3>
-              <h4 className="text-gray-100 italic">
+              <h4 className="text-customGradient-200 italic">
               May 2019 — July 2019 - Bangalore, Karnataka, India
               </h4>
-              <p className="mt-6 text-base leading-7 text-gray-100">
+              <p className="mt-6 text-base leading-7 text-customGradient-200">
               •	Spearheaded the adoption of Jest for API automation testing, resulting in a 30% decrease in bug reports, enhancing the reliability and stability of the software.
 •	Managed the performance and API testing of the CCD (Cafe Coffee Day) application.
               </p>
               <div className="mt-10 flex items-center gap-x-4">
-                <h4 className="flex-none text-xl font-semibold leading-6 text-indigo-400">
+                <h4 className="flex-none text-xl font-semibold leading-6 text-customGradient-400">
                  Technology Stack
                 </h4>
                 <div className="h-px flex-auto bg-gray-100"></div>
               </div>
               <ul
                 role="list"
-                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-gray-100 sm:grid-cols-3 sm:gap-6"
+                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
               >
                 <li className="flex gap-x-3">
-                  <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">JEST</a>
+                  <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">JEST</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Github</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Github</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Apollo Graphql</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Apollo Graphql</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">HTML / CSS</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">HTML / CSS</a>
                 </li>
                 <li className="flex gap-x-3">
-                <a href="#" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">JavaScript</a>
+                <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">JavaScript</a>
                 </li>
               </ul>
             </div>
@@ -197,7 +197,7 @@ export default function Experiece() {
             </div>
           </div>
           </Fade>
-          <Link to="education" className="font-semibold leading-6 text-gray-100 hover:text-opacity-50" smooth={true} duration={800}>
+          <Link to="education" className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50" smooth={true} duration={800}>
           <div className="absolute  left-1/2 transform -translate-x-1/2 mb-8 pt-10">
             <Lottie animationData={DownAnimationData}></Lottie>
           </div>
