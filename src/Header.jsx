@@ -34,9 +34,9 @@ export default function Header() {
           <a>
           <Link to="expertise" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Expertise</Link> 
           </a>
-          <a > 
+          {/* <a > 
           <Link to="projects" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Projects</Link> 
-          </a>
+          </a> */}
           <a>
           <Link to="experience" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Experience</Link> 
           </a>

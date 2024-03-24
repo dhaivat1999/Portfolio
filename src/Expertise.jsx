@@ -60,7 +60,7 @@ export default function Expertise() {
                     </svg>
                   </span>
                   <h3 className="mt-3 text-2xl font-semibold leading-6 text-customGradient-200 group-hover:text-gray-500">
-                    <a href="#">Software Development</a>
+                    <a>Software Development</a>
                   </h3>
                 </div>
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
@@ -89,7 +89,7 @@ export default function Expertise() {
                     </svg>
                   </span>
                   <h3 className="mt-3 text-2xl font-semibold leading-6 text-customGradient-200 group-hover:text-gray-500">
-                    <a href="#"> FrontEnd - React, Angular</a>
+                    <a> FrontEnd - React, Angular</a>
                   </h3>
                 </div>
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
@@ -116,7 +116,7 @@ export default function Expertise() {
                     </svg>
                   </span>
                   <h3 className="mt-3 text-2xl font-semibold leading-6 text-customGradient-200 group-hover:text-gray-500">
-                    <a href="#"> Database and API Development</a>
+                    <a> Database and API Development</a>
                   </h3>
                 </div>
                 <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
