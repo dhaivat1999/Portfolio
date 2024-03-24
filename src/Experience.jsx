@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 import Lottie from "lottie-react";
 import DownAnimationData from "./assets/DownAnimation.json";
 import ExperienceAnimationData from "./assets/ExperienceAnimation.json";
-export default function Experiece() {
+export default function Experience() {
   return (
     <>
       <div
