@@ -19,7 +19,7 @@ export default function Expertise() {
                   Expertise
                 </h2>
                 <p className="mt-2 text-lg leading-8 text-customGradient-200">
-                  Sometimes the best way to solve a problem is to help other -
+                  Sometimes the best way to solve a problem is to help others -
                   Uncle Iroh, 'Avatar: The Last Airbender'
                 </p>
               </Fade>
@@ -100,7 +100,7 @@ export default function Expertise() {
               </article>
             </Fade>
             <Fade bottom duration={1900}>
-              <article className="flex max-w-xl flex-col items-start justify-between border-l border-gray-200 pl-8 border-r pr-8">
+              <article className="flex max-w-xl flex-col items-start justify-between border-l pl-8 ">
                 <div className="group relative flex items-center">
                   <span className="mr-2">
                     <svg
