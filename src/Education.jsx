@@ -58,8 +58,7 @@ export default function Education() {
                   style={{ width: "400px", height: "250px" }}
                   className="center"
                 >
-                  <Lottie animationData={EducationAnimationData}
-                  ></Lottie>
+                  <Lottie animationData={EducationAnimationData}></Lottie>
                 </div>
               </Fade>
             </div>
@@ -94,71 +93,50 @@ export default function Education() {
                 className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
               >
                 <Fade bottom duration={1100}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Security Management
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1200}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Software Measurement and Testing
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1300}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Security Engineering
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1400}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Human- Computer Interaction
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1500}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Big Data Technologies
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1600}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Model-Driven Development
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1700}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       SE for Financial Systems
                     </a>
                   </li>
@@ -194,81 +172,57 @@ export default function Education() {
                 className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
               >
                 <Fade bottom duration={1100}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Operating System
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1200}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Advanced Database
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1300}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Software Engineering
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1400}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Mircoservice Architectures
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1500}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Data Structure
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1600}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Information Retrieval Systems
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1700}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Big Data Analytics
                     </a>
                   </li>
                 </Fade>
                 <Fade bottom duration={1800}>
-                  <li className="flex gap-x-3">
-                    <a
-                      href="#"
-                      class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-customGradient-50"
-                    >
+                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
+                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
                       Data Mining
                     </a>
                   </li>
@@ -288,19 +242,7 @@ export default function Education() {
               </div>
             </div>
             <div className="flex justify-center items-center pb-10">
-              <a
-                href="https://www.instagram.com/dhaivat_dd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-4"
-              >
-                <div className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center">
-                  <div style={{ width: "50px", height: "50px" }}>
-                    <Lottie animationData={InstagramAnimation}></Lottie>
-                  </div>
-                </div>
-              </a>
-              <a
+            <a
                 href="https://www.linkedin.com/in/dhaivatdesai1999"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -319,6 +261,19 @@ export default function Education() {
                   </div>
                 </div>
               </a>
+              <a
+                href="https://www.instagram.com/dhaivat_dd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-4"
+              >
+                <div className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center">
+                  <div style={{ width: "50px", height: "50px" }}>
+                    <Lottie animationData={InstagramAnimation}></Lottie>
+                  </div>
+                </div>
+              </a>
+             
               <a
                 href="https://github.com/dhaivat1999"
                 target="_blank"

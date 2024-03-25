@@ -9,7 +9,7 @@ export default function Expertise() {
     <>
       <div
         id="expertise"
-        className="bg-customGradient-900 py-24 sm:py-32 h-screen w-screen "
+        className="bg-customGradient-900 py-24 sm:py-32 h-auto sm:h-screen"
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16 mx-auto max-w-7xl px-6 lg:px-8">

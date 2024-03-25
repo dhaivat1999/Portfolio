@@ -9,7 +9,7 @@ export default function LandingPage(props) {
   if (props.isLoggedIn) {
     return (
       <>
-        <div id="home" className="relative isolate w-screen h-screen overflow-hidden bg-customGradient-900 py-24 sm:py-32 flex flex-col md:flex-row items-center justify-center">
+        <div id="home" className="relative isolate w-screen min-h-screen overflow-hidden bg-customGradient-900 py-24 sm:py-32 flex flex-col md:flex-row items-center justify-center">
           <img src={LondonBackScreen} alt="" className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center opacity-15"></img>
           <div className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true">
             <div className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#013a63] to-[#90e0ef] opacity-20"></div>
@@ -28,7 +28,7 @@ export default function LandingPage(props) {
                 Software Engineer and Front-end Developer
               </h2>
               <p className="mt-6 text-lg leading-8 text-customGradient-300">
-                Hi, I am Dhaivat Desai based in London, United Kingdom. I am Motivated and results-oriented Software Engineer with a Master's in Advanced Software Engineering from Kings College London. Experienced in leading DevOps processes, setting up CI/CD pipelines, and developing automation utilities, with extensive knowledge of front end development Technologies such as React, Angular using Javascript and Typescript. Adept at using a diverse set of technologies to drive efficient software development.
+                Hi, I am Dhaivat Desai based in London, United Kingdom. I am a driven Software Engineer with a Master's in Advanced Software Engineering from Kings College London. Experienced in leading DevOps processes, setting up CI/CD pipelines, and developing automation utilities, with extensive knowledge of front end development Technologies such as React, Angular using Javascript and Typescript. 
               </p>
             </div>
           </Fade>
