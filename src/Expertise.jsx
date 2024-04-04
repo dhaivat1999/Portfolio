@@ -26,9 +26,12 @@ export default function Expertise() {
             </div>
             <div className="flex justify-center items-center">
               <Fade bottom duration={1200}>
-              <div style={{ width: "300px", height: "250px" }} className="center">
-              <Lottie animationData={ExpertiseAnimation}></Lottie>
-            </div>
+                <div
+                  style={{ width: "300px", height: "250px" }}
+                  className="center"
+                >
+                  <Lottie animationData={ExpertiseAnimation}></Lottie>
+                </div>
               </Fade>
             </div>
           </div>
@@ -63,7 +66,7 @@ export default function Expertise() {
                     <a>Software Development</a>
                   </h3>
                 </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
+                <p className="mt-5 text-sm leading-6 text-customGradient-200">
                   In the realm of software development, I seamlessly transition
                   between the worlds of functional and object-oriented
                   programming, proficient in Java, Go, Python, JavaScript, and
@@ -92,7 +95,7 @@ export default function Expertise() {
                     <a> FrontEnd - React, Angular</a>
                   </h3>
                 </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
+                <p className="mt-5  text-sm leading-6 text-customGradient-200 ">
                   Mastering the art of front-end alchemy: React, Angular, HTML,
                   CSS (Tailwind CSS), TypeScript, and JavaScript are my tools of
                   choice.
@@ -119,7 +122,7 @@ export default function Expertise() {
                     <a> Database and API Development</a>
                   </h3>
                 </div>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-customGradient-200">
+                <p className="mt-5 text-sm leading-6 text-customGradient-200">
                   At the intersection of databases and APIs, I orchestrate
                   seamless experiences with Node.js, Express, and MongoDB,
                   ensuring data flows smoothly and securely.
@@ -128,16 +131,16 @@ export default function Expertise() {
             </Fade>
           </div>
           <Fade bottom duration={1500}>
-          <Link
-            to="experience"
-            className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50"
-            smooth={true}
-            duration={800}
-          >
-            <div className="absolute  left-1/2 transform -translate-x-1/2 mb-8 pt-10">
-              <Lottie animationData={DownAnimationData}></Lottie>
-            </div>
-          </Link>
+            <Link
+              to="experience"
+              className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50"
+              smooth={true}
+              duration={800}
+            >
+              <div className="absolute  left-1/2 transform -translate-x-1/2 mb-8 pt-10">
+                <Lottie animationData={DownAnimationData}></Lottie>
+              </div>
+            </Link>
           </Fade>
         </div>
       </div>
