@@ -14,11 +14,10 @@ export default function Header() {
         setIsScrolled(false);
       }
     };
-   
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
-    
     };
   }, []);
   return (
@@ -55,9 +54,16 @@ export default function Header() {
               Expertise
             </Link>
           </a>
-          {/* <a > 
-          <Link to="projects" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800}>Projects</Link> 
-          </a> */}
+          <a>
+            <Link
+              to="project"
+              className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50"
+              smooth={true}
+              duration={800}
+            >
+              Projects
+            </Link>
+          </a>
           <a>
             <Link
               to="experience"

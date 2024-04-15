@@ -132,7 +132,7 @@ export default function Expertise() {
           </div>
           <Fade bottom duration={1500}>
             <Link
-              to="experience"
+              to="project"
               className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50"
               smooth={true}
               duration={800}

@@ -5,6 +5,7 @@ import Expertise from "./Expertise";
 import Experience from "./Experience";
 import Education from "./Education";
 import CustomCursor from "./CustomCursor";
+import Project from "./Project";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
 
       <div>
         <Expertise></Expertise>
+      </div>
+      <div>
+        <Project></Project>
       </div>
       <div>
         <Experience />
