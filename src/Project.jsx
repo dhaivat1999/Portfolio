@@ -4,6 +4,7 @@ import { Link } from "react-scroll";
 import Lottie from "lottie-react";
 import ProjectAnimation from "./assets/ProjectAnimation.json";
 import FirstProject from "./assets/Project1.png";
+import DownAnimationData from "./assets/DownAnimation.json";
 export default function Project() {
   return (
     <>
@@ -133,19 +134,42 @@ export default function Project() {
                 width="2432"
                 height="800"
               />
-            <h1 class="mt-4 text-customGradient-200">
-  Technologies Used:
-  <ul class="list-disc pl-4 mt-2">
-    <li>Frontend: React</li>
-    <li>Backend: Node.js with Express</li>
-    <li>Database: MongoDB Atlas</li>
-    <li>Authentication: Google Auth</li>
-  </ul>
-</h1>
-<h1 className="mt-4 text-customGradient-400"> Github Link to the React Project : <a href="https://github.com/dhaivat1999/taskManager-React/tree/master">https://github.com/dhaivat1999/taskManager-React/tree/master</a> <br/>
-Github Link to the Node.js(Express) Project :  <a href="https://github.com/dhaivat1999/TaskManager-api/tree/master">https://github.com/dhaivat1999/TaskManager-api/tree/master</a></h1>
+              <h1 class="mt-4 text-customGradient-200">
+                Technologies Used:
+                <ul class="list-disc pl-4 mt-2">
+                  <li>Frontend: React</li>
+                  <li>Backend: Node.js with Express</li>
+                  <li>Database: MongoDB Atlas</li>
+                  <li>Authentication: Google Auth</li>
+                </ul>
+              </h1>
+              <h1 className="mt-4 text-customGradient-400">
+                {" "}
+                Github Link to the React Project :{" "}
+                <a href="https://github.com/dhaivat1999/taskManager-React/tree/master">
+                  https://github.com/dhaivat1999/taskManager-React/tree/master
+                </a>{" "}
+                <br />
+                Github Link to the Node.js(Express) Project :{" "}
+                <a href="https://github.com/dhaivat1999/TaskManager-api/tree/master">
+                  https://github.com/dhaivat1999/TaskManager-api/tree/master
+                </a>
+              </h1>
             </div>
+           
           </div>
+          <Fade bottom duration={1500}>
+              <Link
+                to="experience"
+                className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50"
+                smooth={true}
+                duration={800}
+              >
+                <div className="absolute  left-1/2 transform -translate-x-1/2 mb-8 pt-10">
+                  <Lottie animationData={DownAnimationData}></Lottie>
+                </div>
+              </Link>
+            </Fade>
         </div>
       </div>
     </>
