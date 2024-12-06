@@ -28,7 +28,7 @@ export default function LandingPage(props) {
                 Software Engineer and Front-end Developer
               </h2>
               <p className="mt-6 text-lg leading-8 text-customGradient-300">
-                Hi, I am Dhaivat Desai based in London, United Kingdom. I am a driven Software Engineer with a Master's in Advanced Software Engineering from Kings College London. Experienced in leading DevOps processes, setting up CI/CD pipelines, and developing automation utilities, with extensive knowledge of front end development Technologies such as React, Angular using Javascript and Typescript. 
+                Hi, I am Dhaivat Desai based in Ahmedabad, Gujarat, India. I am a driven Software Engineer with a Master's in Advanced Software Engineering from Kings College London. Experienced in leading DevOps processes, setting up CI/CD pipelines, and developing automation utilities, with extensive knowledge of front end development Technologies such as React, Angular using Javascript and Typescript. 
               </p>
             </div>
           </Fade>
