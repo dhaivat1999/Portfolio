@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Pdf from "./assets/Dhaivat_CV.pdf";
-import { Link, Element } from "react-scroll";
+import { Link } from "react-scroll";
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
@@ -20,20 +22,34 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header
       id="header"
-      className={`fixed hidden sm:block top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-transparent shadow-lg" : "bg-transparent"
       }`}
     >
       <nav
-        className="flex items-center justify-between p-6 lg:px-8 sm:px-8"
+        className="flex items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1 sm:flex-1"></div>
-        <div className="flex lg:hidden sm:hidden"></div>
-        <div className="lg:flex lg:gap-x-12 sm:flex sm:gap-x-12">
+        <div className="flex lg:flex-1">
+          {/* LOGO */}
+          <a href="#" className="text-customGradient-50 font-bold">
+          Dhaivat Desai
+          </a>
+        </div>
+        {/* Hamburger Menu */}
+        <div className="flex lg:hidden">
+          <button onClick={toggleMobileMenu} className="text-white">
+          </button>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-12">
           <a>
             <Link
               to="home"
@@ -89,7 +105,7 @@ export default function Header() {
               to="social"
               className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50"
               smooth={true}
-              duration={1500}
+              duration={800}
             >
               Social
             </Link>
@@ -103,7 +119,56 @@ export default function Header() {
             Resume
           </a>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end sm:flex sm:flex-1 sm:justify-end"></div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden absolute left-0 top-full w-full bg-gray-800 ${
+            isMobileMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          <div className="flex flex-col gap-4 p-6">
+            <Link
+              to="home"
+              className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50"
+              smooth={true}
+              duration={800}
+              onClick={toggleMobileMenu}
+            >
+              Home
+            </Link>
+            <Link
+              to="expertise"
+              className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50"
+              smooth={true}
+              duration={800}
+              onClick={toggleMobileMenu}
+            >
+              Expertise
+            </Link>
+            <Link
+              to="project"
+              className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50"
+              smooth={true}
+              duration={800}
+              onClick={toggleMobileMenu}
+            >
+              Projects
+            </Link>
+            <Link
+              to="experience"
+              className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50"
+              smooth={true}
+              duration={800}
+              onClick={toggleMobileMenu}
+            >
+              Experience
+            </Link>
+              <Link to="social" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50" smooth={true} duration={800} onClick={toggleMobileMenu} >
+              Social
+            </Link>
+            <a href={Pdf} target="_blank" rel="noopener noreferrer" className="font-semibold leading-6 text-customGradient-50 hover:text-opacity-50">Resume</a>
+          </div>
+        </div>
       </nav>
     </header>
   );
