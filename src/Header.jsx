@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Pdf from "./assets/Dhaivat_CV.pdf";
+import { Bars3Icon } from "@heroicons/react/24/solid";
 import { Link } from "react-scroll";
 
 export default function Header() {
@@ -47,6 +48,9 @@ export default function Header() {
         {/* Hamburger Menu */}
         <div className="flex lg:hidden">
           <button onClick={toggleMobileMenu} className="text-white">
+          <Bars3Icon
+                  className="h-6 w-6 text-customGradient-50"
+                  aria-hidden="true"/>
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
