@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Fade from "react-reveal/Fade";
-import KclLogo from "./assets/KingsLogo.png";
-import NirmaLogo from "./assets/NirmaLogo.png";
 import Lottie from "lottie-react";
 import UpAnimationData from "./assets/UpAnimation.json";
 import EducationAnimationData from "./assets/EducationAnimation.json";
@@ -9,297 +9,196 @@ import InstagramAnimation from "./assets/InstagramAnimation.json";
 import GithubAnimation from "./assets/GithubAnimation.json";
 import MailAnimation from "./assets/MailAnimation.json";
 import LinkedinAnimation from "./assets/LinkedInAnimation.json";
-import React, { useState, useEffect } from "react";
+import KclLogo from "./assets/KingsLogo.png";
+import NirmaLogo from "./assets/NirmaLogo.png";
+
+const CourseTag = ({ name }) => (
+  <motion.span
+    whileHover={{ scale: 1.05 }}
+    className="px-4 py-2 text-sm font-medium rounded-full bg-blue-500/10 text-blue-400 
+               border border-blue-500/20 hover:border-blue-500/40 transition-colors duration-300"
+  >
+    {name}
+  </motion.span>
+);
+
+const EducationCard = ({ logo, degree, institution, period, courses }) => (
+  <Fade bottom duration={1500}>
+    <div
+      className="relative group p-8 rounded-2xl backdrop-blur-sm bg-white/5 border border-gray-800 
+                    hover:border-gray-700 transition-all duration-300"
+    >
+      <div className="flex flex-col items-center space-y-6">
+        <motion.img
+          src={logo}
+          alt={institution}
+          className="h-16 w-auto opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+          whileHover={{ scale: 1.05 }}
+        />
+
+        <div className="text-center space-y-2">
+          <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+            {degree}
+          </h3>
+          <p className="text-gray-400">
+            {institution} | {period}
+          </p>
+        </div>
+
+        <div className="w-full space-y-4">
+          <div className="flex items-center gap-x-4">
+            <h4 className="text-lg font-semibold text-gray-300">Coursework</h4>
+            <div className="h-px flex-auto bg-gray-800"></div>
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            {courses.map((course, index) => (
+              <CourseTag key={index} name={course} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Fade>
+);
+
+const SocialLink = ({ href, animation }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mx-4 transform hover:scale-110 transition-transform duration-300"
+    whileHover={{ y: -2 }}
+  >
+    <div style={{ width: "50px", height: "50px" }}>
+      <Lottie animationData={animation} />
+    </div>
+  </motion.a>
+);
+
 export default function Education() {
   const [showScrollButton, setShowScrollButton] = useState(false);
 
+  const kclCourses = [
+    "Security Management",
+    "Software Measurement and Testing",
+    "Security Engineering",
+    "Human-Computer Interaction",
+    "Big Data Technologies",
+    "Model-Driven Development",
+    "SE for Financial Systems",
+  ];
+
+  const nirmaCourses = [
+    "Operating System",
+    "Advanced Database",
+    "Software Engineering",
+    "Microservice Architectures",
+    "Data Structure",
+    "Information Retrieval Systems",
+    "Big Data Analytics",
+    "Data Mining",
+  ];
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset > 20) {
-        setShowScrollButton(true);
-      } else {
-        setShowScrollButton(false);
-      }
-    };
-
+    const handleScroll = () => setShowScrollButton(window.pageYOffset > 20);
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <>
-      <div id="education" className="bg-customGradient-900  w-screen">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-16 mx-auto max-w-7xl px-6 lg:px-8">
-            <div>
-              <Fade bottom duration={1200}>
-                <h2 className="text-3xl font-bold tracking-tight text-customGradient-200 sm:text-4xl">
-                  Education
-                </h2>
-                <p className="mt-2 text-lg leading-8 text-customGradient-200">
-                  Grounded in academic excellence, my educational journey
-                  enriches the foundation of my portfolio
-                </p>
-              </Fade>
+    <div id="education" className="bg-gray-900 py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Header Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <Fade bottom duration={1200}>
+            <div className="space-y-4">
+              <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
+                Education
+              </h2>
+              <p className="text-lg text-gray-300">
+                Grounded in academic excellence, my educational journey enriches
+                the foundation of my portfolio
+              </p>
             </div>
-            <div className="flex justify-center items-center">
-              <Fade bottom duration={1200}>
-                <div
-                  style={{ width: "400px", height: "250px" }}
-                  className="center"
-                >
-                  <Lottie animationData={EducationAnimationData}></Lottie>
-                </div>
-              </Fade>
-            </div>
+          </Fade>
+
+          <div className="flex justify-center lg:justify-end">
+            <Fade bottom duration={1200}>
+              <div className="w-72 h-72 relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full opacity-20 blur-2xl"></div>
+                <Lottie
+                  animationData={EducationAnimationData}
+                  className="relative z-10"
+                />
+              </div>
+            </Fade>
           </div>
         </div>
 
-        <section class="relative isolate overflow-hidden bg-customGradient-900 px-6 sm:py-32 lg:px-8">
-          <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-customGradient-900"></div>
-          <div class="mx-auto max-w-2xl lg:max-w-4xl pb-10">
-            <Fade bottom duration={1500}>
-              <img src={KclLogo} alt="" className="mx-auto h-14"></img>
-            </Fade>
-            <figure class="mt-10">
-              <Fade bottom duration={1500}>
-                <h3 className="text-center text-xl text-customGradient-200 font-bold leading-8">
-                  MSc Advanced Software Engineerging
-                </h3>
-                <h3 className="text-center text-l text-customGradient-200 font-bold leading-8">
-                  King's College London, London, United Kingdom | Sept 2022-Sept
-                  2023
-                </h3>
+        {/* Education Cards */}
+        <div className="space-y-8">
+          <EducationCard
+            logo={KclLogo}
+            degree="MSc Advanced Software Engineering"
+            institution="King's College London, London, United Kingdom"
+            period="Sept 2022-Sept 2023"
+            courses={kclCourses}
+          />
 
-                <div className="mt-10 flex items-center gap-x-4">
-                  <h4 className="flex-none text-xl font-semibold leading-6 text-customGradient-400">
-                    Coursework
-                  </h4>
-                  <div className="h-px flex-auto bg-customGradient-50"></div>
-                </div>
-              </Fade>
-              <ul
-                role="list"
-                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
-              >
-                <Fade bottom duration={1100}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Security Management
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1200}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Software Measurement and Testing
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1300}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Security Engineering
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1400}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Human- Computer Interaction
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1500}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Big Data Technologies
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1600}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Model-Driven Development
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1700}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      SE for Financial Systems
-                    </a>
-                  </li>
-                </Fade>
-              </ul>
-            </figure>
-          </div>
-          <Fade bottom duration={1700}>
-            <hr></hr>
-          </Fade>
-          <div class="mx-auto max-w-2xl lg:max-w-4xl pt-10">
-            <Fade bottom duration={1500}>
-              <img src={NirmaLogo} alt="" className="mx-auto h-14"></img>
-            </Fade>
-            <figure class="mt-10">
-              <Fade bottom duration={1500}>
-                <h3 className="text-center text-xl text-customGradient-200 font-bold leading-8">
-                  Bachelors Of Information Technology
-                </h3>
-                <h3 className="text-center text-l text-customGradient-200 font-bold leading-8">
-                  Nirma University, Ahmedabad, India | August 2017 - June 2020
-                </h3>
-                {/* </blockquote> */}
-                <div className="mt-10 flex items-center gap-x-4">
-                  <h4 className="flex-none text-xl font-semibold leading-6 text-customGradient-400">
-                    Coursework
-                  </h4>
-                  <div className="h-px flex-auto bg-customGradient-50"></div>
-                </div>
-              </Fade>
-              <ul
-                role="list"
-                className="mt-8 grid grid-cols-3 gap-6 text-sm leading-6 text-customGradient-200 sm:grid-cols-3 sm:gap-6"
-              >
-                <Fade bottom duration={1100}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Operating System
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1200}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Advanced Database
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1300}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Software Engineering
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1400}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Mircoservice Architectures
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1500}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Data Structure
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1600}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Information Retrieval Systems
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1700}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Big Data Analytics
-                    </a>
-                  </li>
-                </Fade>
-                <Fade bottom duration={1800}>
-                  <li className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-start">
-                    <a class="relative z-10 rounded-full bg-customGradient-50 px-3 py-1.5 font-medium text-gray-800 hover:bg-customGradient-400">
-                      Data Mining
-                    </a>
-                  </li>
-                </Fade>
-              </ul>
-            </figure>
-          </div>
-        </section>
-        <>
-          <div>
-            <div
-              id="social"
-              className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center"
-            >
-              <div style={{ width: "200px", height: "200px" }}>
-                <Lottie animationData={SocialMediaAnimation}></Lottie>
-              </div>
+          <EducationCard
+            logo={NirmaLogo}
+            degree="Bachelors of Information Technology"
+            institution="Nirma University, Ahmedabad, India"
+            period="August 2017 - June 2020"
+            courses={nirmaCourses}
+          />
+        </div>
+
+        {/* Social Media Section */}
+        <div className="mt-24 space-y-8">
+          <div className="flex justify-center">
+            <div style={{ width: "200px", height: "200px" }}>
+              <Lottie animationData={SocialMediaAnimation} />
             </div>
-            <div className="flex justify-center items-center pb-10">
-            <a
-                href="https://www.linkedin.com/in/dhaivatdesai1999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-4"
-              >
-                <div className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center">
-                  <div style={{ width: "50px", height: "50px" }}>
-                    <Lottie animationData={LinkedinAnimation}></Lottie>
-                  </div>
-                </div>
-              </a>
-              <a href="mailto:dhaivat1999@gmail.com" className="mx-4">
-                <div className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center">
-                  <div style={{ width: "50px", height: "50px" }}>
-                    <Lottie animationData={MailAnimation}></Lottie>
-                  </div>
-                </div>
-              </a>
-              <a
-                href="https://www.instagram.com/dhaivat_dd"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-4"
-              >
-                <div className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center">
-                  <div style={{ width: "50px", height: "50px" }}>
-                    <Lottie animationData={InstagramAnimation}></Lottie>
-                  </div>
-                </div>
-              </a>
-             
-              <a
-                href="https://github.com/dhaivat1999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mx-4"
-              >
-                <div className="font-semibold leading-6 text-customGradient-200 hover:text-opacity-50 flex justify-center items-center">
-                  <div style={{ width: "50px", height: "50px" }}>
-                    <Lottie animationData={GithubAnimation}></Lottie>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {showScrollButton && (
-              <div className="flex justify-end fixed bottom-0 right-0 mr-4 mb-4">
-                <button onClick={scrollToTop} className="w-20 h-20">
-                  <Lottie
-                    animationData={UpAnimationData}
-                    className="h-20 w-20"
-                  ></Lottie>
-                </button>
-              </div>
-            )}
           </div>
-        </>
+
+          <div className="flex justify-center items-center">
+            <SocialLink
+              href="https://www.linkedin.com/in/dhaivatdesai1999"
+              animation={LinkedinAnimation}
+            />
+            <SocialLink
+              href="mailto:dhaivat1999@gmail.com"
+              animation={MailAnimation}
+            />
+            <SocialLink
+              href="https://www.instagram.com/dhaivat_dd"
+              animation={InstagramAnimation}
+            />
+            <SocialLink
+              href="https://github.com/dhaivat1999"
+              animation={GithubAnimation}
+            />
+          </div>
+        </div>
+
+        {/* Scroll to Top Button */}
+        {showScrollButton && (
+          <motion.button
+            onClick={scrollToTop}
+            className="fixed bottom-4 right-4 w-12 h-12 rounded-full bg-blue-500/20 
+                     hover:bg-blue-500/30 transition-colors duration-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+          >
+            <Lottie animationData={UpAnimationData} />
+          </motion.button>
+        )}
       </div>
-    </>
+    </div>
   );
 }
