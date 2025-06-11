@@ -1,8 +1,7 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion"; // We'll need to install this
 
 import AnimationData from "./assets/DownAnimation.json";
 import DhaivatImage from "./assets/Dhaivat.jpg";
@@ -19,105 +18,154 @@ const LandingPageContent = ({ className }) => {
   ];
 
   return (
-    <div className={`${className} text-white relative z-10`}>
-      <div className="space-y-6">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className={`${className} text-white relative z-10`}
+    >
+      <div className="space-y-8">
+        <motion.h1 
+          className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyber-primary via-cyan-400 to-blue-400 animate-gradient bg-300% neon-text">
             Turning Ideas
           </span>{" "}
           <br />
-          <span className="text-white">Into Digital Reality</span>
-        </h1>
+          <span className="text-white text-shadow-glow">Into Digital Reality</span>
+        </motion.h1>
 
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
+        <motion.p 
+          className="text-lg md:text-xl text-gray-300 max-w-2xl"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
           Hi, I'm Dhaivat Desai, a Software Engineer passionate about crafting
           exceptional web experiences. I specialize in front-end development and
           have experience in DevOps and CI/CD pipelines.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-wrap gap-3">
+        <motion.div 
+          className="flex flex-wrap gap-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
           {skills.map((skill, index) => (
-            <span
+            <motion.span
               key={index}
-              className="px-4 py-2 text-sm bg-white/10 backdrop-blur-sm rounded-full
-                        border border-gray-700 hover:border-blue-500
-                        transition-all duration-300 hover:scale-105"
+              whileHover={{ scale: 1.05, borderColor: 'var(--cyber-primary)' }}
+              className="px-4 py-2 text-sm glass-effect rounded-lg
+                        border border-cyber-primary/20 text-cyber-primary
+                        transition-all duration-300 hover:shadow-glow"
             >
               {skill}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="flex gap-4 mt-8">
-          <Link
-            to="project"
-            className="group relative px-6 py-3 overflow-hidden rounded-lg 
-                     bg-gradient-to-r from-blue-500 to-violet-500
-                     transition-all duration-300 hover:scale-105"
-            smooth={true}
-            duration={800}
-          >
-            <span className="relative z-10 text-white font-semibold">
-              View My Work
-            </span>
-            <div
-              className="absolute inset-0 bg-white/20 translate-y-12 
-                          group-hover:translate-y-0 transition-transform duration-300"
-            ></div>
-          </Link>
+        <motion.div 
+          className="flex gap-4 mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              to="project"
+              className="relative px-6 py-3 rounded-lg font-semibold
+                       border border-cyber-primary bg-cyber-primary/10
+                       hover:bg-cyber-primary/20 transition-all duration-300
+                       hover:shadow-glow group"
+              smooth={true}
+              duration={800}
+            >
+              <span className="relative z-10 text-cyber-primary">
+                View My Work
+              </span>
+              <div className="absolute inset-0 bg-cyber-primary/10 rounded-lg
+                           scale-x-0 group-hover:scale-x-100 transition-transform
+                           duration-300 origin-left"></div>
+            </Link>
+          </motion.div>
 
-          <a
+          <motion.a
             href="mailto:your.email@example.com"
-            className="px-6 py-3 rounded-lg border border-gray-700 
-                     hover:border-blue-500 transition-all duration-300
-                     hover:scale-105 font-semibold"
+            whileHover={{ scale: 1.05 }}
+            className="px-6 py-3 rounded-lg border border-cyber-primary/20
+                     text-cyber-primary hover:bg-cyber-primary/10
+                     transition-all duration-300 hover:shadow-glow font-semibold"
           >
             Contact Me
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const BackgroundImage = () => (
   <>
-    <div className="absolute inset-0 bg-gray-900/90 backdrop-blur-[2px] z-0" />
+    <div className="absolute inset-0 bg-cyber-dark/90 backdrop-blur-[2px] z-0" />
     <img
       src={LondonBackScreen}
       alt=""
-      className="absolute inset-0 -z-10 h-full w-full object-cover"
+      className="absolute inset-0 -z-10 h-full w-full object-cover mix-blend-overlay"
     />
-    <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 via-gray-900/95 to-transparent" />
-    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,#4338ca,transparent_50%)] opacity-20" />
+    <div className="absolute inset-0 bg-gradient-to-tr from-cyber-dark via-cyber-dark/95 to-transparent" />
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,var(--cyber-primary),transparent_50%)] opacity-10" />
+    <div className="absolute inset-0" style={{
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300f6ff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      backgroundSize: '60px 60px',
+    }} />
   </>
 );
 
 const ProfileImage = () => (
-  <div className="relative">
-    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full blur opacity-70" />
-    <img
-      src={DhaivatImage}
-      alt="Profile of Dhaivat Desai"
-      className="relative w-48 h-48 md:w-72 md:h-72 rounded-full object-cover 
-                border-4 border-gray-800 shadow-2xl transition-all duration-300 
-                hover:scale-105 hover:border-blue-500"
-    />
-  </div>
+  <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8 }}
+    className="relative"
+  >
+    <div className="absolute -inset-1 bg-gradient-to-r from-cyber-primary to-blue-500 rounded-full blur-xl opacity-70 animate-pulse" />
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="relative rounded-full p-1 bg-gradient-to-r from-cyber-primary to-blue-500"
+    >
+      <img
+        src={DhaivatImage}
+        alt="Profile of Dhaivat Desai"
+        className="w-48 h-48 md:w-72 md:h-72 rounded-full object-cover 
+                  border-4 border-cyber-dark"
+      />
+    </motion.div>
+  </motion.div>
 );
 
 const ScrollDownAnimation = () => (
-  <Link
-    to="expertise"
-    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 
-              text-white/50 hover:text-white/80 transition-colors duration-300"
-    smooth={true}
-    duration={800}
+  <motion.div
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 1, duration: 0.8 }}
   >
-    <div className="w-12 h-12">
-      <Lottie animationData={AnimationData} />
-    </div>
-  </Link>
+    <Link
+      to="expertise"
+      className="absolute bottom-8 left-1/2 transform -translate-x-1/2 
+                text-cyber-primary/50 hover:text-cyber-primary 
+                transition-colors duration-300"
+      smooth={true}
+      duration={800}
+    >
+      <div className="w-12 h-12">
+        <Lottie animationData={AnimationData} />
+      </div>
+    </Link>
+  </motion.div>
 );
 
 export default function LandingPage() {
@@ -129,15 +177,16 @@ export default function LandingPage() {
                  gap-12 px-6 py-24 sm:py-32"
     >
       <BackgroundImage />
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
         className="flex flex-col md:flex-row items-center gap-12 md:gap-16 
-                    max-w-7xl mx-auto relative z-10"
+                  max-w-7xl mx-auto relative z-10"
       >
         <ProfileImage />
-        <Fade bottom duration={1200}>
-          <LandingPageContent />
-        </Fade>
-      </div>
+        <LandingPageContent className="mt-8 md:mt-0" />
+      </motion.div>
       <ScrollDownAnimation />
     </div>
   );

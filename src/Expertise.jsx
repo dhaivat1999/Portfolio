@@ -1,127 +1,154 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
-import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import DownAnimationData from "./assets/DownAnimation.json";
 import ExpertiseAnimation from "./assets/ExpertiseAnimation.json";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { 
+    opacity: 0,
+    y: 20,
+    scale: 0.95
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
 const ExpertiseCard = ({ icon, title, description }) => (
-  <Fade bottom duration={1500}>
-    <div className="group relative p-6 backdrop-blur-sm bg-white/5 rounded-2xl border border-gray-800 hover:border-gray-700 transition-all duration-300">
+  <motion.div
+    variants={cardVariants}
+    className="relative p-6 rounded-xl border-2 border-[#2d3748]/50 bg-[#0c1120]/80 backdrop-blur-md
+      hover:border-[#00ff88] hover:shadow-[0_0_15px_rgba(0,255,136,0.5)] transition-all duration-500 group overflow-hidden"
+    whileHover={{
+      scale: 1.02,
+      transition: { duration: 0.2 }
+    }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00aaff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="absolute -inset-[1px] bg-gradient-to-br from-[#00ff88] to-[#00aaff] rounded-xl opacity-20 group-hover:opacity-40 blur-sm transition-opacity duration-500"></div>
+    <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <div className="relative z-10">
       <div className="flex items-center space-x-4 mb-4">
-        <span className="p-2 rounded-lg bg-gray-800/50 text-white">
+        <span className="p-3 rounded-lg bg-gradient-to-br from-[#00ff88]/10 to-[#00aaff]/10 text-[#00ff88]
+          group-hover:from-[#00ff88]/20 group-hover:to-[#00aaff]/20 transition-all duration-500
+          shadow-[0_0_10px_rgba(0,255,136,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,136,0.5)]">
           {icon}
         </span>
-        <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-xl font-bold text-white group-hover:text-[#00ff88] transition-colors duration-500
+          [text-shadow:_0_0_10px_rgba(0,255,136,0.5)]">
           {title}
         </h3>
       </div>
-      <p className="text-gray-400 text-sm leading-relaxed">
+      <p className="text-[#a0aec0] text-sm leading-relaxed group-hover:text-[#e2e8f0] transition-colors duration-500">
         {description}
       </p>
     </div>
-  </Fade>
+    <div className="absolute -bottom-2 -right-2 w-32 h-32 bg-[#00ff88]/10 rounded-full blur-2xl 
+      group-hover:bg-[#00ff88]/20 group-hover:w-40 group-hover:h-40 transition-all duration-500"></div>
+  </motion.div>
 );
 
-export default function Expertise() {
+const Expertise = () => {
   const expertiseData = [
     {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 8a1 1 0 0 0-1 1v10H9a1 1 0 1 0 0 2h11a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1h-8Z"/>
-        </svg>
-      ),
-      title: "Software Development",
-      description: "In the realm of software development, I seamlessly transition between the worlds of functional and object-oriented programming, proficient in Java, Go, Python, JavaScript, and TypeScript"
+      icon: "💻",
+      title: "Full Stack Development",
+      description: "Crafting seamless web applications with modern technologies like React, Node.js, and cloud platforms."
     },
     {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M21.718 12c0-1.429-1.339-2.681-3.467-3.5.029-.18.077-.37.1-.545.217-2.058-.273-3.543-1.379-4.182-1.235-.714-2.983-.186-4.751 1.239Z"/>
-        </svg>
-      ),
-      title: "Frontend Development",
-      description: "Mastering the art of front-end alchemy: React, Angular, HTML, CSS (Tailwind CSS), TypeScript, and JavaScript are my tools of choice."
+      icon: "🎨",
+      title: "UI/UX Design",
+      description: "Creating intuitive and visually stunning interfaces with attention to user experience and modern design principles."
     },
     {
-      icon: (
-        <svg
-          className="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M12 7.205c4.418 0 8-1.165 8-2.602C20 3.165 16.418 2 12 2S4 3.165 4 4.603c0 1.437 3.582 2.602 8 2.602Z"/>
-        </svg>
-      ),
-      title: "Database & API Development",
-      description: "At the intersection of databases and APIs, I orchestrate seamless experiences with Node.js, Express, and MongoDB, ensuring data flows smoothly and securely."
+      icon: "🤖",
+      title: "Machine Learning",
+      description: "Implementing AI solutions and data analysis using Python, TensorFlow, and scikit-learn."
+    },
+    {
+      icon: "📱",
+      title: "Mobile Development",
+      description: "Building cross-platform mobile applications with React Native and native Android development."
     }
   ];
 
-  return (
-    <div
-      id="expertise"
-      className="relative min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-24 overflow-hidden"
-    >
-      {/* Background Effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_#1a237e_0%,_transparent_50%)] opacity-20"></div>
+  return (    <section id="expertise" className="relative py-20 overflow-hidden bg-[#070b14]">
+      {/* Cyberpunk background elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0c1120_0%,#070b14_100%)]"></div>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff8830_1px,transparent_1px),linear-gradient(to_bottom,#00ff8830_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-50"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-50"></div>
       
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          <Fade bottom duration={1200}>
-            <div className="space-y-6">
-              <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
-                My Expertise
-              </h2>
-              <p className="text-lg text-gray-400 max-w-2xl">
-                Sometimes the best way to solve a problem is to help others -
-                Uncle Iroh, 'Avatar: The Last Airbender'
-              </p>
-            </div>
-          </Fade>
-          
-          <div className="flex justify-center lg:justify-end">
-            <Fade bottom duration={1200}>
-              <div className="w-72 h-72 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full opacity-20 blur-2xl"></div>
-                <Lottie animationData={ExpertiseAnimation} className="relative z-10" />
-              </div>
-            </Fade>
-          </div>
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="relative container mx-auto px-4 z-10"
+      >
+        <div className="text-center mb-16">          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-5xl font-bold mb-4 relative inline-block"
+          >
+            <span className="bg-gradient-to-r from-[#00ff88] to-[#00aaff] bg-clip-text text-transparent
+              [text-shadow:_0_0_20px_rgba(0,255,136,0.5)]">
+              Areas of Expertise
+            </span>
+            <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="w-40 h-40 mx-auto mb-8"
+          >
+            <Lottie animationData={ExpertiseAnimation} loop={true} />
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {expertiseData.map((item, index) => (
-            <ExpertiseCard
-              key={index}
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-            />
+            <ExpertiseCard key={index} {...item} />
           ))}
         </div>
 
-        <Fade bottom duration={1500}>
-          <Link
-            to="project"
-            className="flex justify-center mt-20"
-            smooth={true}
-            duration={800}
-          >
-            <div className="w-12 h-12 text-gray-400 hover:text-gray-300 transition-colors duration-300">
-              <Lottie animationData={DownAnimationData} />
-            </div>
-          </Link>
-        </Fade>
-      </div>
-    </div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="flex justify-center mt-16"
+        >
+          <div className="w-12 h-12 cursor-pointer hover:scale-110 transition-transform duration-300">
+            <Lottie animationData={DownAnimationData} loop={true} />
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+    </section>
   );
-}
+};
+
+export default Expertise;

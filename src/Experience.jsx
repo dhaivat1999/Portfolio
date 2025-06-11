@@ -11,8 +11,12 @@ const TechStack = ({ technologies }) => (
     {technologies.map((tech, index) => (
       <motion.span
         key={index}
-        className="px-4 py-1.5 text-sm font-medium rounded-full bg-blue-500/10 text-blue-400 
-                   border border-blue-500/20 hover:border-blue-500/40 transition-colors duration-300"
+        className="px-4 py-1.5 text-sm font-medium rounded-lg bg-[#00ff88]/5 text-[#00ff88]
+                   border border-[#00ff88]/20 hover:border-[#00ff88]/40 transition-all duration-300
+                   [text-shadow:_0_0_10px_rgba(0,255,136,0.3)]
+                   hover:[text-shadow:_0_0_15px_rgba(0,255,136,0.5)]
+                   shadow-[0_0_10px_rgba(0,255,136,0.1)]
+                   hover:shadow-[0_0_15px_rgba(0,255,136,0.2)]"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.2 }}
       >
@@ -24,25 +28,39 @@ const TechStack = ({ technologies }) => (
 
 const ExperienceCard = ({ title, period, location, description, technologies, logo, logoAlt }) => (
   <Fade bottom duration={1500}>
-    <div className="group relative rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm border border-gray-800 hover:border-gray-700 transition-all duration-300">
-      <div className="p-8 sm:p-10 lg:flex gap-8">
+    <div className="group relative rounded-xl overflow-hidden bg-[#0c1120]/80 backdrop-blur-md 
+      border-2 border-[#2d3748]/50 hover:border-[#00ff88] transition-all duration-500
+      hover:shadow-[0_0_15px_rgba(0,255,136,0.3)]">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/5 to-[#00aaff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute -inset-[1px] bg-gradient-to-br from-[#00ff88] to-[#00aaff] rounded-xl opacity-20 group-hover:opacity-40 blur-sm transition-opacity duration-500"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      
+      <div className="relative p-8 sm:p-10 lg:flex gap-8 z-10">
         <div className="lg:flex-auto space-y-6">
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+            <h3 className="text-2xl font-bold text-white group-hover:text-[#00ff88] transition-colors duration-300
+              [text-shadow:_0_0_10px_rgba(0,255,136,0.3)] group-hover:[text-shadow:_0_0_15px_rgba(0,255,136,0.5)]">
               {title}
             </h3>
-            <p className="text-gray-400 italic">
+            <p className="text-[#a0aec0] italic group-hover:text-[#e2e8f0] transition-colors duration-300">
               {period} | {location}
             </p>
           </div>
-          
-          <p className="text-gray-300 leading-relaxed">
-            {description}
-          </p>
+            <div className="text-[#a0aec0] leading-relaxed space-y-2 group-hover:text-[#e2e8f0] transition-colors duration-300">
+            {description.split('\n').map((item, i) => (
+              <p key={i} className="flex items-start">
+                <span className="inline-block w-2 h-2 mt-2 mr-3 bg-[#00ff88] rounded-full 
+                  shadow-[0_0_8px_rgba(0,255,136,0.5)]"></span>
+                <span>{item.trim()}</span>
+              </p>
+            ))}
+          </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-gray-300">
+            <h4 className="text-lg font-semibold text-[#e2e8f0] [text-shadow:_0_0_10px_rgba(0,255,136,0.3)]
+              relative inline-block">
               Technology Stack
+              <div className="absolute -bottom-1 left-0 right-0 h-px bg-gradient-to-r from-[#00ff88] to-[#00aaff] opacity-50"></div>
             </h4>
             <TechStack technologies={technologies} />
           </div>
@@ -53,7 +71,8 @@ const ExperienceCard = ({ title, period, location, description, technologies, lo
             <motion.img
               src={logo}
               alt={logoAlt}
-              className="w-32 h-32 object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              className="w-32 h-32 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300
+                filter group-hover:brightness-110 group-hover:drop-shadow-[0_0_8px_rgba(0,255,136,0.5)]"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             />
@@ -76,57 +95,77 @@ export default function Experience() {
       technologies: ["Angular", "Java", "DevOps", "Ansible Tower", "TypeScript", "BitBucket"],
       logo: "https://asset.brandfetch.io/ide4lTCz-B/id3wsg0wma.svg",
       logoAlt: "Bank of America Logo"
-    },
-    // ... Add other experiences here
+    }
   ];
 
   return (
-    <div id="experience" className="bg-gray-900 py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          <Fade bottom duration={1200}>
-            <div className="space-y-4">
-              <h2 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
-                Experience
-              </h2>
-              <p className="text-lg text-gray-300 max-w-2xl">
-                Crafting success through years of professional mastery, each
-                experience a brushstroke in the masterpiece of my portfolio.
-              </p>
-            </div>
-          </Fade>
-          
-          <div className="flex justify-center lg:justify-end">
+    <div className="relative bg-[#070b14] overflow-hidden" id="experience">
+      {/* Cyberpunk background elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#0c1120_0%,#070b14_100%)]"></div>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00ff8830_1px,transparent_1px),linear-gradient(to_bottom,#00ff8830_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00ff88] to-transparent opacity-50"></div>
+
+      <div className="relative py-24 z-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Header Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <Fade bottom duration={1200}>
-              <div className="w-72 h-72 relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-violet-500 rounded-full opacity-20 blur-2xl"></div>
-                <Lottie animationData={ExperienceAnimationData} className="relative z-10" />
+              <div className="space-y-4">
+                <h2 className="text-5xl font-bold relative inline-block">
+                  <span className="bg-gradient-to-r from-[#00ff88] to-[#00aaff] bg-clip-text text-transparent
+                    [text-shadow:_0_0_20px_rgba(0,255,136,0.5)]">
+                    Experience
+                  </span>
+                  <div className="absolute -bottom-2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00ff88] to-transparent"></div>
+                </h2>
+                <p className="text-lg text-[#a0aec0] [text-shadow:_0_0_10px_rgba(0,255,136,0.2)]">
+                  Crafting success through years of professional mastery, each
+                  experience a brushstroke in the masterpiece of my portfolio.
+                </p>
               </div>
             </Fade>
-          </div>
-        </div>
 
-        {/* Experience Cards */}
-        <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <ExperienceCard key={index} {...exp} />
-          ))}
-        </div>
-
-        {/* Navigation Arrow */}
-        <Fade bottom duration={1500}>
-          <Link
-            to="education"
-            className="flex justify-center mt-20"
-            smooth={true}
-            duration={800}
-          >
-            <div className="w-12 h-12 text-gray-400 hover:text-gray-300 transition-colors duration-300">
-              <Lottie animationData={DownAnimationData} />
+            <div className="flex justify-center lg:justify-end">
+              <Fade bottom duration={1200}>
+                <div className="w-72 h-72 relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88] via-[#00aaff] to-[#00ff88] rounded-full opacity-20 blur-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00ff88]/10 to-[#00aaff]/10 rounded-full animate-pulse"></div>
+                  <Lottie 
+                    animationData={ExperienceAnimationData} 
+                    className="relative z-10 drop-shadow-[0_0_8px_rgba(0,255,136,0.5)]" 
+                  />
+                </div>
+              </Fade>
             </div>
-          </Link>
-        </Fade>
+          </div>
+
+          {/* Experience Cards */}
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <ExperienceCard key={index} {...exp} />
+            ))}
+          </div>
+
+          {/* Navigation Arrow */}
+          <Fade bottom duration={1500}>
+            <Link
+              to="education"
+              className="flex justify-center mt-20"
+              smooth={true}
+              duration={800}
+            >
+              <div className="w-12 h-12 relative group cursor-pointer">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/20 to-[#00aaff]/20 rounded-full 
+                  opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
+                <Lottie 
+                  animationData={DownAnimationData} 
+                  className="relative z-10 drop-shadow-[0_0_8px_rgba(0,255,136,0.5)]" 
+                />
+              </div>
+            </Link>
+          </Fade>
+        </div>
       </div>
     </div>
   );

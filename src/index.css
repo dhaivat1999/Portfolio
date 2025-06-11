@@ -1,3 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --cyber-primary: #00f6ff;
+  --cyber-secondary: #0891b2;
+  --cyber-accent: #818cf8;
+  --cyber-dark: #0f172a;
+  --cyber-light: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--cyber-dark);
+  color: var(--cyber-light);
+}
+
+.cyber-border {
+  position: relative;
+  border: 1px solid rgba(0, 246, 255, 0.3);
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    var(--cyber-primary), 
+    var(--cyber-accent), 
+    var(--cyber-secondary)
+  );
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-border:hover::before {
+  opacity: 1;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px var(--cyber-primary),
+               0 0 10px var(--cyber-primary),
+               0 0 15px var(--cyber-primary);
+}
+
+.glass-effect {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
