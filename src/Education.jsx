@@ -220,18 +220,26 @@ export default function Education() {
           {showScrollButton && (
             <motion.button
               onClick={scrollToTop}
-              className="fixed bottom-4 right-4 w-12 h-12 rounded-lg bg-[#0c1120]/80 
-                border border-[#00ff88]/30 hover:border-[#00ff88] transition-all duration-300
-                shadow-[0_0_10px_rgba(0,255,136,0.2)] hover:shadow-[0_0_20px_rgba(0,255,136,0.4)]"
+              className="fixed bottom-4 right-4 w-12 h-12 rounded-full bg-[#0c1120]/80 
+                border border-[#00ff88]/60 hover:border-[#00ff88] transition-all duration-300
+                shadow-[0_0_10px_rgba(0,255,136,0.2)] hover:shadow-[0_0_20px_rgba(0,255,136,0.4)]
+                flex items-center justify-center group"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               whileHover={{ scale: 1.1 }}
+              aria-label="Scroll to top"
             >
-              <div className="relative w-full h-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#00ff88]/5 to-[#00aaff]/5 opacity-0 
-                  group-hover:opacity-100 transition-opacity duration-300"></div>
-                <Lottie animationData={UpAnimationData} />
-              </div>
+              {/* Neon up arrow */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 text-[#00ff88] group-hover:text-[#00aaff] transition-colors duration-300 drop-shadow-[0_0_8px_rgba(0,255,136,0.7)]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+              </svg>
             </motion.button>
           )}
         </div>
